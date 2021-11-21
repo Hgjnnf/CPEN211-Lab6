@@ -74,6 +74,7 @@ module lab6_check;
     #10;
     if (lab6_check.DUT.DP.REGFILE.R2 !== 16'h10) begin
       err = 1;
+      $display("R2 is: %d", lab6_check.DUT.DP.REGFILE.R2);
       $display("FAILED: ADD R2, R1, R0, LSL#1");
       $stop;
     end

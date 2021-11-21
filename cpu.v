@@ -5,7 +5,7 @@ module cpu(clk, reset, s, load, in, out, N, V, Z, w);
     output reg N, V, Z, w;
 
     // States
-    parameter Swait = 3'b000, Sdecode = 3'b001, SgetA = 3'b010, SgetB = 3'b011, Swrite = 3'b100, Srewrite = 3'b101, Salu = 3'b110, Sshift = 3'b111;
+    parameter Swait = 4'b0000, Sdecode = 4'b0001, SgetA = 4'b0010, SgetB = 4'b0011, Swrite = 4'b0100, Srewrite = 4'b0101, Salu = 4'b0110, Sshift = 4'b0111, Sloadout = 4'b1000;
 
     // Decoder Input
     wire [15:0] decoder_in;
@@ -34,20 +34,31 @@ module cpu(clk, reset, s, load, in, out, N, V, Z, w);
         sximm8 = { {8{decoder_in[7]}}, decoder_in[7:0]};
         shift = decoder_in[4:3];
         opcode = decoder_in[15:13];
+    end
 
-        case(nsel)
-            3'b001: {readnum, writenum} = decoder_in[2:0]; // Rm
-            3'b010: {readnum, writenum} = decoder_in[7:5]; // Rd
-            3'b100: {readnum, writenum} = decoder_in[10:8]; // Rn
+    //nsel MUX
+    always@(*)begin
+       case(nsel)
+            3'b001: begin
+                readnum = decoder_in[2:0];
+                writenum = decoder_in[2:0];
+            end // Rm
+            3'b010: begin
+                readnum = decoder_in[7:5];
+                writenum = decoder_in[7:5];
+            end // Rd
+            3'b100: begin
+                readnum = decoder_in[10:8];
+                writenum = decoder_in[10:8];
+            end // Rn
             default: {readnum, writenum} = 3'b0;
-        endcase
+        endcase 
     end
 
     // State Machine (Mealy)
     always @(posedge clk) begin
         if(reset == 1'b1) {w, state} = {1'b1, Swait};
         else begin
-            state = Sdecode;
             case(state)
                 Sdecode: begin
                     if(opcode == 3'b110 && op == 2'b10) {w, state} = {1'b0, Swrite};
@@ -63,8 +74,9 @@ module cpu(clk, reset, s, load, in, out, N, V, Z, w);
                     if(opcode == 3'b110 && op == 2'b0) state = Sshift;
                     else if(opcode == 3'b101) state = Salu;
                 end
-                Salu: state = Srewrite;
-                Sshift: state = Srewrite;
+                Salu: state = Sloadout;
+                Sshift: state = Sloadout;
+                Sloadout: state = Srewrite;
                 Srewrite: state = Swait;
                 default: {state, w} = {Swait, 1'b1};
             endcase
@@ -75,7 +87,8 @@ module cpu(clk, reset, s, load, in, out, N, V, Z, w);
             SgetB: {nsel, loadb, loada} = {3'b001, 1'b1, 1'b0};
             Salu: {asel, bsel} = {1'b0, 1'b0};
             Sshift: {asel, bsel} = {1'b1, 1'b0};
-            Srewrite: {loadc, loads, vsel, nsel, write} = {1'b1, 1'b1, 2'b0, 3'b010, 1'b1};
+            Sloadout: {loadc, loads} = {1'b1, 1'b1};
+            Srewrite: {vsel, nsel, write} = {2'b0, 3'b010, 1'b1};
             Swrite: {vsel, nsel, write} = {2'b10, 3'b100, 1'b1};
             default: begin 
                 {nsel, vsel} = {3'b0, 2'b0};

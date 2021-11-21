@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab6_top
-Sat Nov 20 18:03:25 2021
+Sat Nov 20 19:59:54 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,25 +10,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: input_iface:IN|vDFF:REG
- 13. Parameter Settings for User Entity Instance: cpu:U
- 14. Parameter Settings for User Entity Instance: cpu:U|vDFFE:Instruct_Reg
- 15. Parameter Settings for User Entity Instance: cpu:U|datapath:DP|vDFFE:A
- 16. Parameter Settings for User Entity Instance: cpu:U|datapath:DP|vDFFE:B
- 17. Parameter Settings for User Entity Instance: cpu:U|datapath:DP|vDFFE:C
- 18. Parameter Settings for User Entity Instance: cpu:U|datapath:DP|vDFFE:STATUS
- 19. Port Connectivity Checks: "cpu:U|datapath:DP|vDFFE:STATUS"
- 20. Port Connectivity Checks: "cpu:U|datapath:DP"
- 21. Post-Synthesis Netlist Statistics for Top Partition
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -51,27 +33,22 @@ refer to the applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Nov 20 18:03:25 2021       ;
-; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name                   ; lab6_top                                    ;
-; Top-level Entity Name           ; lab6_top                                    ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 16                                          ;
-; Total pins                      ; 67                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Sat Nov 20 19:59:54 2021           ;
+; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name               ; lab6_top                                    ;
+; Top-level Entity Name       ; lab6_top                                    ;
+; Family                      ; Cyclone V                                   ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
+; Total registers             ; N/A until Partition Merge                   ;
+; Total pins                  ; N/A until Partition Merge                   ;
+; Total virtual pins          ; N/A until Partition Merge                   ;
+; Total block memory bits     ; N/A until Partition Merge                   ;
+; Total PLLs                  ; N/A until Partition Merge                   ;
+; Total DLLs                  ; N/A until Partition Merge                   ;
++-----------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -177,354 +154,19 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                   ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                     ; Library ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
-; cpu.v                            ; yes             ; User Verilog HDL File  ; C:/Users/georg/Documents/CPEN211/Lab6/cpu.v      ;         ;
-; vDFFE.v                          ; yes             ; User Verilog HDL File  ; C:/Users/georg/Documents/CPEN211/Lab6/vDFFE.v    ;         ;
-; shifter.v                        ; yes             ; User Verilog HDL File  ; C:/Users/georg/Documents/CPEN211/Lab6/shifter.v  ;         ;
-; regfile.v                        ; yes             ; User Verilog HDL File  ; C:/Users/georg/Documents/CPEN211/Lab6/regfile.v  ;         ;
-; lab6_top.v                       ; yes             ; User Verilog HDL File  ; C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v ;         ;
-; datapath.v                       ; yes             ; User Verilog HDL File  ; C:/Users/georg/Documents/CPEN211/Lab6/datapath.v ;         ;
-; alu.v                            ; yes             ; User Verilog HDL File  ; C:/Users/georg/Documents/CPEN211/Lab6/alu.v      ;         ;
-+----------------------------------+-----------------+------------------------+--------------------------------------------------+---------+
-
-
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 10          ;
-;                                             ;             ;
-; Combinational ALUT usage for logic          ; 8           ;
-;     -- 7 input functions                    ; 0           ;
-;     -- 6 input functions                    ; 0           ;
-;     -- 5 input functions                    ; 0           ;
-;     -- 4 input functions                    ; 0           ;
-;     -- <=3 input functions                  ; 8           ;
-;                                             ;             ;
-; Dedicated logic registers                   ; 16          ;
-;                                             ;             ;
-; I/O pins                                    ; 67          ;
-;                                             ;             ;
-; Total DSP Blocks                            ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; SW[9]~input ;
-; Maximum fan-out                             ; 24          ;
-; Total fan-out                               ; 147         ;
-; Average fan-out                             ; 0.93        ;
-+---------------------------------------------+-------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                  ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+-------------+--------------+
-; |lab6_top                  ; 8 (0)               ; 16 (0)                    ; 0                 ; 0          ; 67   ; 0            ; |lab6_top                         ; lab6_top    ; work         ;
-;    |input_iface:IN|        ; 8 (8)               ; 16 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |lab6_top|input_iface:IN          ; input_iface ; work         ;
-;       |vDFF:REG|           ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |lab6_top|input_iface:IN|vDFF:REG ; vDFF        ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+-------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                          ;
-+-----------------------------------------------+---------------------------------------------+
-; Register name                                 ; Reason for Removal                          ;
-+-----------------------------------------------+---------------------------------------------+
-; cpu:U|datapath:DP|regfile:REGFILE|R6[1,2]     ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R7[0..15]   ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R6[0,3..15] ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R5[0..15]   ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R4[0..15]   ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R3[0..15]   ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R2[0..15]   ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R1[0..15]   ; Lost fanout                                 ;
-; cpu:U|bsel                                    ; Stuck at GND due to stuck port data_in      ;
-; cpu:U|vsel[0]                                 ; Stuck at GND due to stuck port data_in      ;
-; cpu:U|loads                                   ; Merged with cpu:U|loadc                     ;
-; cpu:U|w                                       ; Stuck at GND due to stuck port data_in      ;
-; cpu:U|loadb                                   ; Stuck at GND due to stuck port data_in      ;
-; cpu:U|nsel[0,1]                               ; Stuck at GND due to stuck port data_in      ;
-; cpu:U|datapath:DP|vDFFE:B|out[0..15]          ; Stuck at GND due to stuck port clock_enable ;
-; cpu:U|asel                                    ; Stuck at GND due to stuck port data_in      ;
-; cpu:U|loadc                                   ; Stuck at GND due to stuck port data_in      ;
-; cpu:U|datapath:DP|vDFFE:C|out[0..15]          ; Stuck at GND due to stuck port clock_enable ;
-; cpu:U|datapath:DP|vDFFE:STATUS|out[0..2]      ; Stuck at GND due to stuck port clock_enable ;
-; cpu:U|datapath:DP|vDFFE:A|out[0]              ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R0[0]       ; Lost fanout                                 ;
-; cpu:U|vDFFE:Instruct_Reg|out[0]               ; Lost fanout                                 ;
-; cpu:U|datapath:DP|vDFFE:A|out[1]              ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R0[1]       ; Lost fanout                                 ;
-; cpu:U|vDFFE:Instruct_Reg|out[1]               ; Lost fanout                                 ;
-; cpu:U|datapath:DP|vDFFE:A|out[2]              ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R0[2]       ; Lost fanout                                 ;
-; cpu:U|vDFFE:Instruct_Reg|out[2]               ; Lost fanout                                 ;
-; cpu:U|datapath:DP|vDFFE:A|out[3]              ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R0[3]       ; Lost fanout                                 ;
-; cpu:U|vDFFE:Instruct_Reg|out[3]               ; Lost fanout                                 ;
-; cpu:U|datapath:DP|vDFFE:A|out[4]              ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R0[4]       ; Lost fanout                                 ;
-; cpu:U|vDFFE:Instruct_Reg|out[4]               ; Lost fanout                                 ;
-; cpu:U|datapath:DP|vDFFE:A|out[5]              ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R0[5]       ; Lost fanout                                 ;
-; cpu:U|vDFFE:Instruct_Reg|out[5]               ; Lost fanout                                 ;
-; cpu:U|datapath:DP|vDFFE:A|out[6]              ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R0[6]       ; Lost fanout                                 ;
-; cpu:U|vDFFE:Instruct_Reg|out[6]               ; Lost fanout                                 ;
-; cpu:U|datapath:DP|vDFFE:A|out[7]              ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R0[7]       ; Lost fanout                                 ;
-; cpu:U|datapath:DP|vDFFE:A|out[8]              ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R0[8]       ; Lost fanout                                 ;
-; cpu:U|datapath:DP|vDFFE:A|out[9]              ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R0[9]       ; Lost fanout                                 ;
-; cpu:U|datapath:DP|vDFFE:A|out[10]             ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R0[10]      ; Lost fanout                                 ;
-; cpu:U|datapath:DP|vDFFE:A|out[11]             ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R0[11]      ; Lost fanout                                 ;
-; cpu:U|datapath:DP|vDFFE:A|out[12]             ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R0[12]      ; Lost fanout                                 ;
-; cpu:U|datapath:DP|vDFFE:A|out[13]             ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R0[13]      ; Lost fanout                                 ;
-; cpu:U|datapath:DP|vDFFE:A|out[14]             ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R0[14]      ; Lost fanout                                 ;
-; cpu:U|datapath:DP|vDFFE:A|out[15]             ; Lost fanout                                 ;
-; cpu:U|datapath:DP|regfile:REGFILE|R0[15]      ; Lost fanout                                 ;
-; cpu:U|vDFFE:Instruct_Reg|out[7]               ; Lost fanout                                 ;
-; cpu:U|vsel[1]                                 ; Lost fanout                                 ;
-; cpu:U|write                                   ; Lost fanout                                 ;
-; cpu:U|vDFFE:Instruct_Reg|out[8..10]           ; Lost fanout                                 ;
-; cpu:U|nsel[2]                                 ; Lost fanout                                 ;
-; cpu:U|loada                                   ; Lost fanout                                 ;
-; cpu:U|vDFFE:Instruct_Reg|out[11..15]          ; Lost fanout                                 ;
-; Total Number of Removed Registers = 208       ;                                             ;
-+-----------------------------------------------+---------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                               ;
-+-----------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
-; Register name                           ; Reason for Removal        ; Registers Removed due to This Register                                              ;
-+-----------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
-; cpu:U|loadb                             ; Stuck at GND              ; cpu:U|datapath:DP|vDFFE:B|out[0], cpu:U|datapath:DP|vDFFE:B|out[1],                 ;
-;                                         ; due to stuck port data_in ; cpu:U|datapath:DP|vDFFE:B|out[2], cpu:U|datapath:DP|vDFFE:B|out[3],                 ;
-;                                         ;                           ; cpu:U|datapath:DP|vDFFE:B|out[4], cpu:U|datapath:DP|vDFFE:B|out[5],                 ;
-;                                         ;                           ; cpu:U|datapath:DP|vDFFE:B|out[6], cpu:U|datapath:DP|vDFFE:B|out[7],                 ;
-;                                         ;                           ; cpu:U|datapath:DP|vDFFE:B|out[8], cpu:U|datapath:DP|vDFFE:B|out[9],                 ;
-;                                         ;                           ; cpu:U|datapath:DP|vDFFE:B|out[10], cpu:U|datapath:DP|vDFFE:B|out[11],               ;
-;                                         ;                           ; cpu:U|datapath:DP|vDFFE:B|out[12], cpu:U|datapath:DP|vDFFE:B|out[13],               ;
-;                                         ;                           ; cpu:U|datapath:DP|vDFFE:B|out[14], cpu:U|datapath:DP|vDFFE:B|out[15],               ;
-;                                         ;                           ; cpu:U|datapath:DP|vDFFE:C|out[10], cpu:U|datapath:DP|vDFFE:C|out[11],               ;
-;                                         ;                           ; cpu:U|datapath:DP|vDFFE:C|out[12], cpu:U|datapath:DP|vDFFE:C|out[14],               ;
-;                                         ;                           ; cpu:U|datapath:DP|regfile:REGFILE|R0[0], cpu:U|datapath:DP|regfile:REGFILE|R0[1],   ;
-;                                         ;                           ; cpu:U|datapath:DP|regfile:REGFILE|R0[2], cpu:U|datapath:DP|regfile:REGFILE|R0[3],   ;
-;                                         ;                           ; cpu:U|datapath:DP|regfile:REGFILE|R0[4], cpu:U|datapath:DP|regfile:REGFILE|R0[5],   ;
-;                                         ;                           ; cpu:U|datapath:DP|regfile:REGFILE|R0[6], cpu:U|datapath:DP|regfile:REGFILE|R0[7],   ;
-;                                         ;                           ; cpu:U|datapath:DP|regfile:REGFILE|R0[8], cpu:U|datapath:DP|regfile:REGFILE|R0[9],   ;
-;                                         ;                           ; cpu:U|datapath:DP|regfile:REGFILE|R0[10], cpu:U|datapath:DP|regfile:REGFILE|R0[11], ;
-;                                         ;                           ; cpu:U|datapath:DP|vDFFE:A|out[12], cpu:U|datapath:DP|regfile:REGFILE|R0[12],        ;
-;                                         ;                           ; cpu:U|datapath:DP|regfile:REGFILE|R0[13], cpu:U|datapath:DP|vDFFE:A|out[14],        ;
-;                                         ;                           ; cpu:U|datapath:DP|regfile:REGFILE|R0[14], cpu:U|datapath:DP|regfile:REGFILE|R0[15]  ;
-; cpu:U|bsel                              ; Stuck at GND              ; cpu:U|datapath:DP|vDFFE:C|out[0], cpu:U|datapath:DP|vDFFE:C|out[1],                 ;
-;                                         ; due to stuck port data_in ; cpu:U|datapath:DP|vDFFE:C|out[2], cpu:U|datapath:DP|vDFFE:C|out[3],                 ;
-;                                         ;                           ; cpu:U|datapath:DP|vDFFE:C|out[4], cpu:U|datapath:DP|vDFFE:C|out[5],                 ;
-;                                         ;                           ; cpu:U|datapath:DP|vDFFE:C|out[6], cpu:U|datapath:DP|vDFFE:C|out[7],                 ;
-;                                         ;                           ; cpu:U|datapath:DP|vDFFE:C|out[8], cpu:U|datapath:DP|vDFFE:C|out[9],                 ;
-;                                         ;                           ; cpu:U|datapath:DP|vDFFE:C|out[13], cpu:U|datapath:DP|vDFFE:STATUS|out[0],           ;
-;                                         ;                           ; cpu:U|datapath:DP|vDFFE:STATUS|out[2], cpu:U|datapath:DP|vDFFE:A|out[0],            ;
-;                                         ;                           ; cpu:U|vDFFE:Instruct_Reg|out[0], cpu:U|datapath:DP|vDFFE:A|out[1],                  ;
-;                                         ;                           ; cpu:U|datapath:DP|vDFFE:A|out[2], cpu:U|datapath:DP|vDFFE:A|out[3],                 ;
-;                                         ;                           ; cpu:U|vDFFE:Instruct_Reg|out[3], cpu:U|datapath:DP|vDFFE:A|out[4],                  ;
-;                                         ;                           ; cpu:U|vDFFE:Instruct_Reg|out[4], cpu:U|datapath:DP|vDFFE:A|out[5],                  ;
-;                                         ;                           ; cpu:U|datapath:DP|vDFFE:A|out[6], cpu:U|datapath:DP|vDFFE:A|out[7],                 ;
-;                                         ;                           ; cpu:U|datapath:DP|vDFFE:A|out[8], cpu:U|datapath:DP|vDFFE:A|out[9],                 ;
-;                                         ;                           ; cpu:U|datapath:DP|vDFFE:A|out[10], cpu:U|datapath:DP|vDFFE:A|out[11],               ;
-;                                         ;                           ; cpu:U|datapath:DP|vDFFE:A|out[13], cpu:U|datapath:DP|vDFFE:A|out[15], cpu:U|loada,  ;
-;                                         ;                           ; cpu:U|vDFFE:Instruct_Reg|out[11], cpu:U|vDFFE:Instruct_Reg|out[12],                 ;
-;                                         ;                           ; cpu:U|vDFFE:Instruct_Reg|out[13], cpu:U|vDFFE:Instruct_Reg|out[14],                 ;
-;                                         ;                           ; cpu:U|vDFFE:Instruct_Reg|out[15]                                                    ;
-; cpu:U|nsel[1]                           ; Stuck at GND              ; cpu:U|vDFFE:Instruct_Reg|out[10], cpu:U|vDFFE:Instruct_Reg|out[9],                  ;
-;                                         ; due to stuck port data_in ; cpu:U|vDFFE:Instruct_Reg|out[8], cpu:U|nsel[2]                                      ;
-; cpu:U|datapath:DP|regfile:REGFILE|R6[2] ; Lost Fanouts              ; cpu:U|vDFFE:Instruct_Reg|out[2], cpu:U|vsel[1], cpu:U|write                         ;
-; cpu:U|vsel[0]                           ; Stuck at GND              ; cpu:U|vDFFE:Instruct_Reg|out[5], cpu:U|vDFFE:Instruct_Reg|out[6],                   ;
-;                                         ; due to stuck port data_in ; cpu:U|vDFFE:Instruct_Reg|out[7]                                                     ;
-; cpu:U|loadc                             ; Stuck at GND              ; cpu:U|datapath:DP|vDFFE:C|out[15], cpu:U|datapath:DP|vDFFE:STATUS|out[1]            ;
-;                                         ; due to stuck port data_in ;                                                                                     ;
-; cpu:U|datapath:DP|regfile:REGFILE|R6[1] ; Lost Fanouts              ; cpu:U|vDFFE:Instruct_Reg|out[1]                                                     ;
-+-----------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 16    ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 16    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 16:1               ; 3 bits    ; 30 LEs        ; 18 LEs               ; 12 LEs                 ; Yes        ; |lab6_top|cpu:U|nsel[2]                           ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |lab6_top|cpu:U|loada                             ;
-; 257:1              ; 16 bits   ; 2736 LEs      ; 0 LEs                ; 2736 LEs               ; Yes        ; |lab6_top|cpu:U|datapath:DP|regfile:REGFILE|R0[7] ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |lab6_top|cpu:U|datapath:DP|ALU:U2|Mux5           ;
-; 4:1                ; 14 bits   ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; No         ; |lab6_top|cpu:U|datapath:DP|shifter:U1|Mux6       ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |lab6_top|cpu:U|state                             ;
-; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; No         ; |lab6_top|cpu:U|Mux0                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-
-
-+----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: input_iface:IN|vDFF:REG ;
-+----------------+-------+---------------------------------------------+
-; Parameter Name ; Value ; Type                                        ;
-+----------------+-------+---------------------------------------------+
-; n              ; 16    ; Signed Integer                              ;
-+----------------+-------+---------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------+
-; Parameter Settings for User Entity Instance: cpu:U ;
-+----------------+-------+---------------------------+
-; Parameter Name ; Value ; Type                      ;
-+----------------+-------+---------------------------+
-; Swait          ; 000   ; Unsigned Binary           ;
-; Sdecode        ; 001   ; Unsigned Binary           ;
-; SgetA          ; 010   ; Unsigned Binary           ;
-; SgetB          ; 011   ; Unsigned Binary           ;
-; Swrite         ; 100   ; Unsigned Binary           ;
-; Srewrite       ; 101   ; Unsigned Binary           ;
-; Salu           ; 110   ; Unsigned Binary           ;
-; Sshift         ; 111   ; Unsigned Binary           ;
-+----------------+-------+---------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: cpu:U|vDFFE:Instruct_Reg ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-; n              ; 16    ; Signed Integer                               ;
-+----------------+-------+----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: cpu:U|datapath:DP|vDFFE:A ;
-+----------------+-------+-----------------------------------------------+
-; Parameter Name ; Value ; Type                                          ;
-+----------------+-------+-----------------------------------------------+
-; n              ; 16    ; Signed Integer                                ;
-+----------------+-------+-----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: cpu:U|datapath:DP|vDFFE:B ;
-+----------------+-------+-----------------------------------------------+
-; Parameter Name ; Value ; Type                                          ;
-+----------------+-------+-----------------------------------------------+
-; n              ; 16    ; Signed Integer                                ;
-+----------------+-------+-----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: cpu:U|datapath:DP|vDFFE:C ;
-+----------------+-------+-----------------------------------------------+
-; Parameter Name ; Value ; Type                                          ;
-+----------------+-------+-----------------------------------------------+
-; n              ; 16    ; Signed Integer                                ;
-+----------------+-------+-----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: cpu:U|datapath:DP|vDFFE:STATUS ;
-+----------------+-------+----------------------------------------------------+
-; Parameter Name ; Value ; Type                                               ;
-+----------------+-------+----------------------------------------------------+
-; n              ; 3     ; Signed Integer                                     ;
-+----------------+-------+----------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cpu:U|datapath:DP|vDFFE:STATUS"                                                                                                                                                   ;
-+------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
-+------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; in   ; Input ; Warning  ; Input port expression (34 bits) is wider than the input port (3 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-+------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "cpu:U|datapath:DP"                                                                                                                                                                   ;
-+----------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port     ; Type  ; Severity ; Details                                                                                                                                                                           ;
-+----------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; readnum  ; Input ; Info     ; Stuck at GND                                                                                                                                                                      ;
-; mdata    ; Input ; Info     ; Stuck at GND                                                                                                                                                                      ;
-; PC       ; Input ; Warning  ; Input port expression (16 bits) is wider than the input port (8 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; PC[7..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                      ;
-+----------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 16                          ;
-;     ENA               ; 16                          ;
-; arriav_lcell_comb     ; 10                          ;
-;     normal            ; 10                          ;
-;         0 data inputs ; 2                           ;
-;         3 data inputs ; 8                           ;
-; boundary_port         ; 67                          ;
-;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.69                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Nov 20 18:03:03 2021
+    Info: Processing started: Sat Nov 20 19:59:37 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab6 -c lab6_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file cpu.v
-    Info (12023): Found entity 1: cpu File: C:/Users/georg/Documents/CPEN211/Lab6/cpu.v Line: 1
+Error (10170): Verilog HDL syntax error at cpu.v(80) near text: "Srewrite";  expecting ";". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Users/georg/Documents/CPEN211/Lab6/cpu.v Line: 80
+Error (10112): Ignored design unit "cpu" at cpu.v(1) due to previous errors File: C:/Users/georg/Documents/CPEN211/Lab6/cpu.v Line: 1
+Info (12021): Found 0 design units, including 0 entities, in source file cpu.v
 Info (12021): Found 1 design units, including 1 entities, in source file vdffe.v
     Info (12023): Found entity 1: vDFFE File: C:/Users/georg/Documents/CPEN211/Lab6/vDFFE.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file shifter_tb.v
@@ -550,84 +192,10 @@ Info (12021): Found 1 design units, including 1 entities, in source file alu_tb.
     Info (12023): Found entity 1: ALU_tb File: C:/Users/georg/Documents/CPEN211/Lab6/alu_tb.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alu.v
     Info (12023): Found entity 1: ALU File: C:/Users/georg/Documents/CPEN211/Lab6/alu.v Line: 1
-Info (12127): Elaborating entity "lab6_top" for the top level hierarchy
-Info (12128): Elaborating entity "input_iface" for hierarchy "input_iface:IN" File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 40
-Info (12128): Elaborating entity "vDFF" for hierarchy "input_iface:IN|vDFF:REG" File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 75
-Info (12128): Elaborating entity "cpu" for hierarchy "cpu:U" File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 52
-Info (10264): Verilog HDL Case Statement information at cpu.v(38): all case item expressions in this case statement are onehot File: C:/Users/georg/Documents/CPEN211/Lab6/cpu.v Line: 38
-Info (12128): Elaborating entity "vDFFE" for hierarchy "cpu:U|vDFFE:Instruct_Reg" File: C:/Users/georg/Documents/CPEN211/Lab6/cpu.v Line: 28
-Info (12128): Elaborating entity "datapath" for hierarchy "cpu:U|datapath:DP" File: C:/Users/georg/Documents/CPEN211/Lab6/cpu.v Line: 108
-Info (12128): Elaborating entity "regfile" for hierarchy "cpu:U|datapath:DP|regfile:REGFILE" File: C:/Users/georg/Documents/CPEN211/Lab6/datapath.v Line: 35
-Info (10264): Verilog HDL Case Statement information at regfile.v(30): all case item expressions in this case statement are onehot File: C:/Users/georg/Documents/CPEN211/Lab6/regfile.v Line: 30
-Info (10264): Verilog HDL Case Statement information at regfile.v(62): all case item expressions in this case statement are onehot File: C:/Users/georg/Documents/CPEN211/Lab6/regfile.v Line: 62
-Info (12128): Elaborating entity "ALU" for hierarchy "cpu:U|datapath:DP|ALU:U2" File: C:/Users/georg/Documents/CPEN211/Lab6/datapath.v Line: 36
-Info (12128): Elaborating entity "shifter" for hierarchy "cpu:U|datapath:DP|shifter:U1" File: C:/Users/georg/Documents/CPEN211/Lab6/datapath.v Line: 37
-Info (12128): Elaborating entity "vDFFE" for hierarchy "cpu:U|datapath:DP|vDFFE:STATUS" File: C:/Users/georg/Documents/CPEN211/Lab6/datapath.v Line: 68
-Info (12128): Elaborating entity "sseg" for hierarchy "sseg:H0" File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 59
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 35
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 35
-    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 36
-Info (286030): Timing-Driven Synthesis is running
-Info (17049): 164 registers lost all their fanouts during netlist optimizations.
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 5 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 33
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 34
-    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 33
-    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 33
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v Line: 33
-Info (21057): Implemented 91 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 15 input pins
-    Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 24 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 53 warnings
-    Info: Peak virtual memory: 4799 megabytes
-    Info: Processing ended: Sat Nov 20 18:03:25 2021
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:49
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
+    Error: Peak virtual memory: 4763 megabytes
+    Error: Processing ended: Sat Nov 20 19:59:54 2021
+    Error: Elapsed time: 00:00:17
+    Error: Total CPU time (on all processors): 00:00:38
 
 

@@ -30,6 +30,8 @@ module datapath(clk,readnum,vsel,loada,loadb,shift,asel,bsel,ALUop,loadc,loads,w
   reg [15:0] data_in;
   reg [15:0] Ain;
   reg [15:0] Bin;
+
+  reg [2:0] status_in;
   
   //module instantiations
   regfile REGFILE(.data_in(data_in),.writenum(writenum),.write(write),.readnum(readnum),.clk(clk),.data_out(data_out));
@@ -61,11 +63,17 @@ module datapath(clk,readnum,vsel,loada,loadb,shift,asel,bsel,ALUop,loadc,loads,w
       Bin = sout;
   end
 
+  always@(*) begin
+    status_in[2] = (Ain[15]^Bin[15]) ? 0 : (out[15]^Ain[15]);
+    status_in[1] = out[15];
+    status_in[0] = Z;
+  end
+
   //load enable registers A,B,C,STATUS
   vDFFE #(16) A(clk, loada, data_out, in_loadA);
   vDFFE #(16) B(clk, loadb, data_out, in);
   vDFFE #(16) C(clk, loadc, out, datapath_out);
-  vDFFE #(3) STATUS(clk, loads, {(Ain[15]^Bin[15]) ? 0 : (out[15]^Ain[15]), out[15], Z}, Z_out);
+  vDFFE #(3) STATUS(clk, loads, status_in, Z_out);
   
 endmodule
   
