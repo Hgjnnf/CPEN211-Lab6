@@ -100,7 +100,7 @@ module cpu(clk, reset, s, load, in, out, N, V, Z, w);
         .writenum(writenum),
         .write(write),
         .mdata(16'b0),
-        .PC(16'b0),
+        .PC(8'b0),
         .sximm5(sximm5),
         .sximm8(sximm8),
         .Z_out(Z_out),
