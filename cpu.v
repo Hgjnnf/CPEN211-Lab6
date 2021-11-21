@@ -1,19 +1,13 @@
-// States
-`define Swait 3'b000
-`define Sdecode 3'b001
-`define SgetA 3'b010
-`define SgetB 3'b011
-`define Swrite 3'b100
-`define Srewrite 3'b101
-`define Salu 3'b110
-`define Sshift 3'b111
-
 module cpu(clk, reset, s, load, in, out, N, V, Z, w);
     input clk, reset, s, load;
     input [15:0] in;
     output [15:0] out;
-    output N, V, Z, w;
+    output reg N, V, Z, w;
 
+    // States
+    parameter Swait = 3'b000, Sdecode = 3'b001, SgetA = 3'b010, SgetB = 3'b011, Swrite = 3'b100, Srewrite = 3'b101, Salu = 3'b110, Sshift = 3'b111;
+
+    // Decoder Input
     wire [15:0] decoder_in;
 
     // Decoder Outputs
@@ -22,9 +16,13 @@ module cpu(clk, reset, s, load, in, out, N, V, Z, w);
     reg [2:0] opcode, readnum, writenum;
     reg [3:0] state;
 
+    // nsel  
+    reg [2:0] nsel;
+
     // Datapath Inputs
-    wire [1:0] vsel;
-    wire loada, loadb, asel, bsel, loadc, loads, write;
+    reg [1:0] vsel;
+    reg loada, loadb, asel, bsel, loadc, loads, write;
+    wire [2:0] Z_out;
 
     // Instruction Register
     vDFFE #(16) Instruct_Reg(clk, load, in, decoder_in);
@@ -71,10 +69,7 @@ module cpu(clk, reset, s, load, in, out, N, V, Z, w);
                 default: {state, w} = {Swait, 1'b1};
             endcase
         end
-    end
 
-    // Mealy Decoder
-    always@(*) begin
         case(state)
             SgetA: {nsel, loada, loadb} = {3'b100, 1'b1, 1'b0};
             SgetB: {nsel, loadb, loada} = {3'b001, 1'b1, 1'b0};
@@ -108,8 +103,14 @@ module cpu(clk, reset, s, load, in, out, N, V, Z, w);
         .PC(16'b0),
         .sximm5(sximm5),
         .sximm8(sximm8),
-        .Z_out({V, N, Z}),
+        .Z_out(Z_out),
         .datapath_out(out)
     );
+
+    always @(*) begin
+        V = Z_out[2];
+        N = Z_out[1];
+        Z = Z_out[0];
+    end
 
 endmodule
