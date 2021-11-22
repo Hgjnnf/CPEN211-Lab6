@@ -30,8 +30,8 @@ module cpu(clk, reset, s, load, in, out, N, V, Z, w);
     // Instruction Decoder
     always@(*) begin
         op = decoder_in[12:11];
-        sximm5 = { {11{decoder_in[4]}}, decoder_in[4:0]};
-        sximm8 = { {8{decoder_in[7]}}, decoder_in[7:0]};
+        sximm5 = { {11{decoder_in[4]}}, decoder_in[4:0] };
+        sximm8 = { {8{decoder_in[7]}}, decoder_in[7:0] };
         shift = decoder_in[4:3];
         opcode = decoder_in[15:13];
     end

@@ -9,342 +9,342 @@ z2
 cModel Technology
 dC:/Users/georg/Documents/CPEN211/Lab5
 vALU
-Z0 !s110 1637620592
+Z0 !s110 1637622665
 !i10b 1
 !s100 eaCAzNjG<AXT4^WH4=Q`m1
-IHF]Xd?giMhjRSK3KEmnam1
+I<;[@ZhAbmfR>lJVV[i]OS2
 Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 dC:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6
-Z3 w1637468185
-8C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/alu.v
-FC:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/alu.v
+Z2 dC:/Users/georg/Documents/CPEN211/Lab6
+w1636938793
+8C:/Users/georg/Documents/CPEN211/Lab6/alu.v
+FC:/Users/georg/Documents/CPEN211/Lab6/alu.v
 L0 1
-Z4 OV;L;10.5b;63
+Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1637620592.000000
-!s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/alu.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/alu.v|
+Z4 !s108 1637622665.000000
+!s107 C:/Users/georg/Documents/CPEN211/Lab6/alu.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/georg/Documents/CPEN211/Lab6/alu.v|
 !i113 1
-Z6 o-work work
-Z7 tCvgOpt 0
+Z5 o-work work
+Z6 tCvgOpt 0
 n@a@l@u
 vALU_tb
 R0
 !i10b 1
 !s100 6_mnH[MC2Wh<U;8SeTz5o1
-IFGg7IzIDf:9HNL1KTMa821
+IQ4QUPcC<c8FoGWS^ak4B41
 R1
 R2
-R3
-8C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/alu_tb.v
-FC:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/alu_tb.v
+Z7 w1637028667
+8C:/Users/georg/Documents/CPEN211/Lab6/alu_tb.v
+FC:/Users/georg/Documents/CPEN211/Lab6/alu_tb.v
 L0 1
-R4
+R3
 r1
 !s85 0
 31
-R5
-!s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/alu_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/alu_tb.v|
+R4
+!s107 C:/Users/georg/Documents/CPEN211/Lab6/alu_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/georg/Documents/CPEN211/Lab6/alu_tb.v|
 !i113 1
+R5
 R6
-R7
 n@a@l@u_tb
 vcpu
 R0
 !i10b 1
-!s100 dUb9]iMCQ[X[kjh9fET1n3
-IW7LAfaZj`71fNd7<2PFM=2
+!s100 ZSnKOC6SDFHRYemIGX^];3
+ILVG^OWX5[7]Nm?edn]8_?2
 R1
 R2
+w1637622615
+8C:/Users/georg/Documents/CPEN211/Lab6/cpu.v
+FC:/Users/georg/Documents/CPEN211/Lab6/cpu.v
+L0 1
 R3
-8C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/cpu.v
-FC:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/cpu.v
-L0 1
-R4
 r1
 !s85 0
 31
-R5
-!s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/cpu.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/cpu.v|
+R4
+!s107 C:/Users/georg/Documents/CPEN211/Lab6/cpu.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/georg/Documents/CPEN211/Lab6/cpu.v|
 !i113 1
+R5
 R6
-R7
 vcpu_tb
-R0
+Z8 !s110 1637622667
 !i10b 1
-!s100 QWj=8HFC]W[RDlalo[ihz3
-IVdf00cbj]W1MKCEc5zg8F1
+!s100 B3lA`CED9jg@]EDB]mLIK1
+I9PGj740dE1L<j6La_I5>B0
 R1
 R2
-w1637620584
-8C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/cpu_tb.v
-FC:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/cpu_tb.v
+w1637622180
+8C:/Users/georg/Documents/CPEN211/Lab6/cpu_tb.v
+FC:/Users/georg/Documents/CPEN211/Lab6/cpu_tb.v
 L0 1
-R4
+R3
 r1
 !s85 0
 31
-R5
-!s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/cpu_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/cpu_tb.v|
+Z9 !s108 1637622667.000000
+!s107 C:/Users/georg/Documents/CPEN211/Lab6/cpu_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/georg/Documents/CPEN211/Lab6/cpu_tb.v|
 !i113 1
+R5
 R6
-R7
 vdatapath
-Z8 !s110 1637620593
+Z10 !s110 1637622666
 !i10b 1
 !s100 knLP5P8fj<dnX?J>D7[[E2
-Ijm[h20JbnA[kgT6m_AH6n3
+ISEC;^iC97<U^;DY[kJ?OB3
 R1
 R2
-R3
-8C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/datapath.v
-FC:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/datapath.v
+w1637460837
+8C:/Users/georg/Documents/CPEN211/Lab6/datapath.v
+FC:/Users/georg/Documents/CPEN211/Lab6/datapath.v
 L0 1
-R4
+R3
 r1
 !s85 0
 31
-R5
-!s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/datapath.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/datapath.v|
+R4
+!s107 C:/Users/georg/Documents/CPEN211/Lab6/datapath.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/georg/Documents/CPEN211/Lab6/datapath.v|
 !i113 1
+R5
 R6
-R7
 vdatapath_tb
-R8
+R10
 !i10b 1
 !s100 ]4c]i<0b2A@kJV7gaEZJi2
-IPBIHiY`<j_m7OY9gHhg;71
+Ime]A^Jz[14]:2:6`Vd:Ub1
 R1
 R2
-R3
-8C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/datapath_tb.v
-FC:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/datapath_tb.v
+w1637379075
+8C:/Users/georg/Documents/CPEN211/Lab6/datapath_tb.v
+FC:/Users/georg/Documents/CPEN211/Lab6/datapath_tb.v
 L0 1
-R4
+R3
 r1
 !s85 0
 31
-Z9 !s108 1637620593.000000
-!s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/datapath_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/datapath_tb.v|
+Z11 !s108 1637622666.000000
+!s107 C:/Users/georg/Documents/CPEN211/Lab6/datapath_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/georg/Documents/CPEN211/Lab6/datapath_tb.v|
 !i113 1
+R5
 R6
-R7
 vinput_iface
-R8
+R10
 !i10b 1
 !s100 cI]j=hC?HTJJ3jIgio0>f3
-I1eo3=aKa7X@YBH3NFgkJL2
+I]?YclX?7;CHNm<D71]Y@]1
 R1
 R2
-R3
-Z10 8C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/lab6_top.v
-Z11 FC:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/lab6_top.v
+Z12 w1637458870
+Z13 8C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v
+Z14 FC:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v
 L0 68
-R4
+R3
 r1
 !s85 0
 31
-R9
-Z12 !s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/lab6_top.v|
-Z13 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/lab6_top.v|
+R11
+Z15 !s107 C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v|
+Z16 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/georg/Documents/CPEN211/Lab6/lab6_top.v|
 !i113 1
+R5
 R6
-R7
 vlab6_check
-R8
+R10
 !i10b 1
 !s100 VXhNmK6`caQiXNfmH5?in1
-IT5F@M5Flz[GK`N<001IjB0
+ImG0[PB1_]1B@eBR=Qf3S^0
 R1
 R2
-R3
-8C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/lab6_autograder_check.v
-FC:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/lab6_autograder_check.v
+w1637462119
+8C:/Users/georg/Documents/CPEN211/Lab6/lab6_autograder_check.v
+FC:/Users/georg/Documents/CPEN211/Lab6/lab6_autograder_check.v
 L0 11
-R4
+R3
 r1
 !s85 0
 31
-R9
-!s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/lab6_autograder_check.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/lab6_autograder_check.v|
+R11
+!s107 C:/Users/georg/Documents/CPEN211/Lab6/lab6_autograder_check.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/georg/Documents/CPEN211/Lab6/lab6_autograder_check.v|
 !i113 1
+R5
 R6
-R7
 vlab6_top
-R8
+R10
 !i10b 1
 !s100 HnMnR^0_7RC1<B7BMA51`0
-IDn_6WCh?5<aJKAR`AE8@23
+Ik7;?7dSdGhJE>0^XE6GG00
 R1
 R2
-R3
-R10
-R11
+R12
+R13
+R14
 L0 32
-R4
+R3
 r1
 !s85 0
 31
-R9
-R12
-R13
+R11
+R15
+R16
 !i113 1
+R5
 R6
-R7
 vregfile
 R8
 !i10b 1
 !s100 oC1?BC?AK77l]fnZH9Sg>0
-IRJb:EYkc9c1B_o2iAKbGf2
+IY@86cVz4VH4:=d``fDE9<0
 R1
 R2
-R3
-8C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/regfile.v
-FC:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/regfile.v
+w1637439925
+8C:/Users/georg/Documents/CPEN211/Lab6/regfile.v
+FC:/Users/georg/Documents/CPEN211/Lab6/regfile.v
 L0 1
-R4
+R3
 r1
 !s85 0
 31
-R9
-!s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/regfile.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/regfile.v|
+R11
+!s107 C:/Users/georg/Documents/CPEN211/Lab6/regfile.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/georg/Documents/CPEN211/Lab6/regfile.v|
 !i113 1
+R5
 R6
-R7
 vregfile_tb
 R8
 !i10b 1
 !s100 jg332R9VVggZCj4IM:Q:41
-IT=f3o`4F<L_oj^C>S?05S2
+In>cWDAd2A8zX0d_9Z26=F3
 R1
 R2
-R3
-8C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/regfile_tb.v
-FC:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/regfile_tb.v
+w1637028666
+8C:/Users/georg/Documents/CPEN211/Lab6/regfile_tb.v
+FC:/Users/georg/Documents/CPEN211/Lab6/regfile_tb.v
 L0 1
-R4
+R3
 r1
 !s85 0
 31
 R9
-!s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/regfile_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/regfile_tb.v|
+!s107 C:/Users/georg/Documents/CPEN211/Lab6/regfile_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/georg/Documents/CPEN211/Lab6/regfile_tb.v|
 !i113 1
+R5
 R6
-R7
 vshifter
 R8
 !i10b 1
 !s100 [bHAVm>CP8X3W<JF[Z3;B0
-IUC^nn]8nbDGAQ5BNGl7<^1
+I;DhHh9ef=F<L_YkYnXZEO3
 R1
 R2
-R3
-8C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/shifter.v
-FC:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/shifter.v
+w1637038994
+8C:/Users/georg/Documents/CPEN211/Lab6/shifter.v
+FC:/Users/georg/Documents/CPEN211/Lab6/shifter.v
 L0 1
-R4
+R3
 r1
 !s85 0
 31
 R9
-!s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/shifter.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/shifter.v|
+!s107 C:/Users/georg/Documents/CPEN211/Lab6/shifter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/georg/Documents/CPEN211/Lab6/shifter.v|
 !i113 1
+R5
 R6
-R7
 vshifter_tb
 R8
 !i10b 1
 !s100 lMh0z6znH[kn6mz98BYnd2
-IaY:g6S5[5g0757MGUQI>m2
+IBb6j3?XLl:J7o>oz35YL`0
 R1
 R2
-R3
-8C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/shifter_tb.v
-FC:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/shifter_tb.v
+R7
+8C:/Users/georg/Documents/CPEN211/Lab6/shifter_tb.v
+FC:/Users/georg/Documents/CPEN211/Lab6/shifter_tb.v
 L0 1
-R4
+R3
 r1
 !s85 0
 31
 R9
-!s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/shifter_tb.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/shifter_tb.v|
+!s107 C:/Users/georg/Documents/CPEN211/Lab6/shifter_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/georg/Documents/CPEN211/Lab6/shifter_tb.v|
 !i113 1
+R5
 R6
-R7
 vsseg
-R8
+R10
 !i10b 1
 !s100 5Xd]OYh;S_529bl`RUGPB0
-IST:85i;]8iH<hI0PNBCa03
+I3OF_6R0YW33Rg@<Z^E]@?2
 R1
 R2
-R3
-R10
-R11
+R12
+R13
+R14
 L0 96
-R4
+R3
 r1
 !s85 0
 31
-R9
-R12
-R13
+R11
+R15
+R16
 !i113 1
+R5
 R6
-R7
 vvDFF
-R8
+R10
 !i10b 1
 !s100 cYi1U1`Gha]F?>a5zRH6>3
-I0PVM6dCoc>hj4WFbiXaES1
+IfMCJ3_6ldgGVff12j32aS3
 R1
 R2
-R3
-R10
-R11
+R12
+R13
+R14
 L0 79
-R4
+R3
+r1
+!s85 0
+31
+R11
+R15
+R16
+!i113 1
+R5
+R6
+nv@d@f@f
+vvDFFE
+R8
+!i10b 1
+!s100 W_UJUPAVncXzGhe[KZ8b`2
+IE:P2An[=hE3[U^R3gBJX^0
+R1
+R2
+w1637381804
+8C:/Users/georg/Documents/CPEN211/Lab6/vDFFE.v
+FC:/Users/georg/Documents/CPEN211/Lab6/vDFFE.v
+L0 1
+R3
 r1
 !s85 0
 31
 R9
-R12
-R13
+!s107 C:/Users/georg/Documents/CPEN211/Lab6/vDFFE.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/georg/Documents/CPEN211/Lab6/vDFFE.v|
 !i113 1
-R6
-R7
-nv@d@f@f
-vvDFFE
-R0
-!i10b 1
-!s100 W_UJUPAVncXzGhe[KZ8b`2
-I3^bmNeb;N[>8^bIG?[8YW3
-R1
-R2
-R3
-8C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/vDFFE.v
-FC:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/vDFFE.v
-L0 1
-R4
-r1
-!s85 0
-31
 R5
-!s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/vDFFE.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/vDFFE.v|
-!i113 1
 R6
-R7
 nv@d@f@f@e
