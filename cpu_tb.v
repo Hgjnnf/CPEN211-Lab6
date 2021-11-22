@@ -37,6 +37,7 @@ module cpu_tb ();
         if (cpu_tb.DUT.DP.REGFILE.R1 !== 16'd70) begin
         err = 1;
         $display("FAILED: MOV R1, #70");
+        $stop;
         end
 
         //Test #2: MOV R2, #2
@@ -52,6 +53,7 @@ module cpu_tb ();
         if (cpu_tb.DUT.DP.REGFILE.R2 !== 16'd2) begin
         err = 1;
         $display("FAILED: MOV R2, #2");
+        $stop;
         end
 
         //Test #3: MOV R3, #8
@@ -67,6 +69,7 @@ module cpu_tb ();
         if (cpu_tb.DUT.DP.REGFILE.R3 !== 16'd8) begin
         err = 1;
         $display("FAILED: MOV R3, #8");
+        $stop;
         end
 
         //Test #4: MOV R4, #21
@@ -82,6 +85,7 @@ module cpu_tb ();
         if (cpu_tb.DUT.DP.REGFILE.R4 !== 16'd21) begin
         err = 1;
         $display("FAILED: MOV R4, #21");
+        $stop;
         end
 
         //Test #5: MOV R5, #-30
@@ -97,6 +101,7 @@ module cpu_tb ();
         if (cpu_tb.DUT.DP.REGFILE.R5 !== -16'd30) begin
         err = 1;
         $display("FAILED: MOV R5, #-30");
+        $stop;
         end
 
         //Test #6: MOV R6, #0
@@ -112,6 +117,7 @@ module cpu_tb ();
         if (cpu_tb.DUT.DP.REGFILE.R6 !== 16'd0) begin
         err = 1;
         $display("FAILED: MOV R6, #0");
+        $stop;
         end
 
         //Test #7: MOV R7, #100
@@ -127,6 +133,7 @@ module cpu_tb ();
         if (cpu_tb.DUT.DP.REGFILE.R7 !== 16'd100) begin
         err = 1;
         $display("FAILED: MOV R7, #100");
+        $stop;
         end
 
         //Test #8: MOV R0, #10
@@ -142,6 +149,7 @@ module cpu_tb ();
         if (cpu_tb.DUT.DP.REGFILE.R0 !== 16'd10) begin
         err = 1;
         $display("FAILED: MOV R0, #10");
+        $stop;
         end
 
         //Test #9: MOV R1, R0, LSL#1 (R1 Should Equal 20)
@@ -157,6 +165,7 @@ module cpu_tb ();
         if (cpu_tb.DUT.DP.REGFILE.R1 !== 16'd20) begin
         err = 1;
         $display("FAILED: MOV R1, R0, LSL#1");
+        $stop;
         end
 
         //Test #10: MOV R5, R3, LSR#1 (R5 Should Equal 4)
@@ -172,6 +181,7 @@ module cpu_tb ();
         if (cpu_tb.DUT.DP.REGFILE.R5 !== 16'd4) begin
         err = 1;
         $display("FAILED: MOV R5, R3, LSR#1");
+        $stop;
         end
 
         //Test 11: ADD R2, R1, R5 (R2 Should Equal 24)
@@ -187,11 +197,12 @@ module cpu_tb ();
         if (cpu_tb.DUT.DP.REGFILE.R2 !== 16'd24) begin
         err = 1;
         $display("FAILED: ADD R2, R1, R0, LSL#1");
+        $stop;
         end
 
         //End of Tests...Check the Overall Outcome
         if (~err) $display("INTERFACE OK");
-        
         $stop;
+        
     end
 endmodule
