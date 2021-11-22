@@ -253,6 +253,22 @@ module cpu_tb ();
         $stop;
         end
 
+        //Test 15: CMP R0, R0 (R0 Should Equal R0)
+        SIM_in = 16'b1010100000000000;
+        SIM_load = 1;
+        #10;
+        SIM_load = 0;
+        SIM_s = 1;
+        #10
+        SIM_s = 0;
+        @(posedge SIM_w); // wait for w to go high again
+        #10;
+        if (cpu_tb.DUT.DP.REGFILE.Z !== 1'd1) begin
+        err = 1;
+        $display("FAILED TEST #15: CMP R0, R0");
+        $stop;
+        end
+
         //End of Tests...Check the Overall Outcome
         if (~err) $display("PASSED ALL TESTS");
 
