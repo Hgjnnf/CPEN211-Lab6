@@ -36,7 +36,7 @@ module cpu_tb ();
         #10;
         if (cpu_tb.DUT.DP.REGFILE.R1 !== 16'd70) begin
         err = 1;
-        $display("FAILED: MOV R1, #70");
+        $display("FAILED TEST #1: MOV R1, #70");
         $stop;
         end
 
@@ -52,7 +52,7 @@ module cpu_tb ();
         #10;
         if (cpu_tb.DUT.DP.REGFILE.R2 !== 16'd2) begin
         err = 1;
-        $display("FAILED: MOV R2, #2");
+        $display("FAILED TEST #2: MOV R2, #2");
         $stop;
         end
 
@@ -68,7 +68,7 @@ module cpu_tb ();
         #10;
         if (cpu_tb.DUT.DP.REGFILE.R3 !== 16'd8) begin
         err = 1;
-        $display("FAILED: MOV R3, #8");
+        $display("FAILED TEST #3: MOV R3, #8");
         $stop;
         end
 
@@ -84,7 +84,7 @@ module cpu_tb ();
         #10;
         if (cpu_tb.DUT.DP.REGFILE.R4 !== 16'd21) begin
         err = 1;
-        $display("FAILED: MOV R4, #21");
+        $display("FAILED TEST #4: MOV R4, #21");
         $stop;
         end
 
@@ -100,7 +100,11 @@ module cpu_tb ();
         #10;
         if (cpu_tb.DUT.DP.REGFILE.R5 !== -16'd30) begin
         err = 1;
-        $display("FAILED: MOV R5, #-30");
+        $display("FAILED TEST #: MOV R5, #-30");
+        $stop;
+        if (cpu_tb.DUT.DP.REGFILE.V !== 1'd1) begin
+        err = 1;
+        $display("FAILED TEST #5: Overflow NOT Detected");
         $stop;
         end
 
@@ -116,7 +120,7 @@ module cpu_tb ();
         #10;
         if (cpu_tb.DUT.DP.REGFILE.R6 !== 16'd0) begin
         err = 1;
-        $display("FAILED: MOV R6, #0");
+        $display("FAILED TEST #6: MOV R6, #0");
         $stop;
         end
 
@@ -132,7 +136,7 @@ module cpu_tb ();
         #10;
         if (cpu_tb.DUT.DP.REGFILE.R7 !== 16'd100) begin
         err = 1;
-        $display("FAILED: MOV R7, #100");
+        $display("FAILED TEST #7: MOV R7, #100");
         $stop;
         end
 
@@ -148,7 +152,7 @@ module cpu_tb ();
         #10;
         if (cpu_tb.DUT.DP.REGFILE.R0 !== 16'd10) begin
         err = 1;
-        $display("FAILED: MOV R0, #10");
+        $display("FAILED TEST #8: MOV R0, #10");
         $stop;
         end
 
@@ -164,7 +168,7 @@ module cpu_tb ();
         #10;
         if (cpu_tb.DUT.DP.REGFILE.R1 !== 16'd20) begin
         err = 1;
-        $display("FAILED: MOV R1, R0, LSL#1");
+        $display("FAILED TEST #9: MOV R1, R0, LSL#1");
         $stop;
         end
 
@@ -180,7 +184,7 @@ module cpu_tb ();
         #10;
         if (cpu_tb.DUT.DP.REGFILE.R5 !== 16'd4) begin
         err = 1;
-        $display("FAILED: MOV R5, R3, LSR#1");
+        $display("FAILED TEST #10: MOV R5, R3, LSR#1");
         $stop;
         end
 
@@ -196,13 +200,61 @@ module cpu_tb ();
         #10;
         if (cpu_tb.DUT.DP.REGFILE.R2 !== 16'd24) begin
         err = 1;
-        $display("FAILED: ADD R2, R1, R0, LSL#1");
+        $display("FAILED TEST #11: ADD R2, R1, R5");
+        $stop;
+        end
+
+        //Test 12: ADD R6, R7, R0 (R6 Should Equal 110)
+        SIM_in = 16'b1010011111000000;
+        SIM_load = 1;
+        #10;
+        SIM_load = 0;
+        SIM_s = 1;
+        #10
+        SIM_s = 0;
+        @(posedge SIM_w); // wait for w to go high again
+        #10;
+        if (cpu_tb.DUT.DP.REGFILE.R6 !== 16'd110) begin
+        err = 1;
+        $display("FAILED TEST #12: ADD R6, R7, R0");
+        $stop;
+        end
+
+        //Test 13: ADD R3, R5, R6, LSR#1 (R3 Should Equal 59)
+        SIM_in = 16'b1010010101110110;
+        SIM_load = 1;
+        #10;
+        SIM_load = 0;
+        SIM_s = 1;
+        #10
+        SIM_s = 0;
+        @(posedge SIM_w); // wait for w to go high again
+        #10;
+        if (cpu_tb.DUT.DP.REGFILE.R3 !== 16'd59) begin
+        err = 1;
+        $display("FAILED TEST #13: ADD R3, R5, R6, LSR#1");
+        $stop;
+        end
+
+        //Test 14: CMP R0, R1, LSR#1 (R0 Should Equal R1/2)
+        SIM_in = 16'b1010100000010001;
+        SIM_load = 1;
+        #10;
+        SIM_load = 0;
+        SIM_s = 1;
+        #10
+        SIM_s = 0;
+        @(posedge SIM_w); // wait for w to go high again
+        #10;
+        if (cpu_tb.DUT.DP.REGFILE.Z !== 1'd1) begin
+        err = 1;
+        $display("FAILED TEST #14: CMP R0, R1, LSR#1");
         $stop;
         end
 
         //End of Tests...Check the Overall Outcome
         if (~err) $display("INTERFACE OK");
         $stop;
-        
+
     end
 endmodule
