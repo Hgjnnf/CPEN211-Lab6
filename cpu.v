@@ -62,7 +62,7 @@ module cpu(clk, reset, s, load, in, out, N, V, Z, w);
             case(state)
                 Sdecode: begin
                     if(opcode == 3'b110 && op == 2'b10) {w, state} = {1'b0, Swrite};
-                    else if(opcode == 3'b101) {w, state} = {1'b0, SgetA};
+                    else {w, state} = {1'b0, SgetA};
                 end
                 Swrite: state = Swait;
                 Swait: begin 

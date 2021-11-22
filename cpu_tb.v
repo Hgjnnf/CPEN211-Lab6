@@ -167,6 +167,7 @@ module cpu_tb ();
         $display("FAILED: MOV R1, R0, LSL#1");
         $stop;
         end
+        
 
         //Test #10: MOV R5, R3, LSR#1 (R5 Should Equal 4)
         SIM_in = 16'b1100000010110011;
@@ -201,7 +202,8 @@ module cpu_tb ();
         end
 
         //End of Tests...Check the Overall Outcome
-        if (~err) $display("INTERFACE OK");
+        if (~err) $display("PASSED ALL TESTS");
+
         $stop;
         
     end
