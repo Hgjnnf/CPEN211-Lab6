@@ -102,6 +102,7 @@ module cpu_tb ();
         err = 1;
         $display("FAILED TEST #: MOV R5, #-30");
         $stop;
+        end
         if (cpu_tb.DUT.DP.REGFILE.V !== 1'd1) begin
         err = 1;
         $display("FAILED TEST #5: Overflow NOT Detected");
