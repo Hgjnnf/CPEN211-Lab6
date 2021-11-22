@@ -34,7 +34,7 @@ module cpu_tb ();
         SIM_s = 0;
         @(posedge SIM_w); // wait for w to go high again
         #10;
-        if (lab6_check.DUT.DP.REGFILE.R1 !== 16'h70) begin
+        if (cpu_tb.DUT.DP.REGFILE.R1 !== 16'd70) begin
         err = 1;
         $display("FAILED: MOV R1, #70");
         $stop;
@@ -50,7 +50,7 @@ module cpu_tb ();
         SIM_s = 0;
         @(posedge SIM_w); // wait for w to go high again
         #10;
-        if (lab6_check.DUT.DP.REGFILE.R2 !== 16'h2) begin
+        if (cpu_tb.DUT.DP.REGFILE.R2 !== 16'd2) begin
         err = 1;
         $display("FAILED: MOV R2, #2");
         $stop;
@@ -66,7 +66,7 @@ module cpu_tb ();
         SIM_s = 0;
         @(posedge SIM_w); // wait for w to go high again
         #10;
-        if (lab6_check.DUT.DP.REGFILE.R3 !== 16'h8) begin
+        if (cpu_tb.DUT.DP.REGFILE.R3 !== 16'd8) begin
         err = 1;
         $display("FAILED: MOV R3, #8");
         $stop;
@@ -82,7 +82,7 @@ module cpu_tb ();
         SIM_s = 0;
         @(posedge SIM_w); // wait for w to go high again
         #10;
-        if (lab6_check.DUT.DP.REGFILE.R4 !== 16'h21) begin
+        if (cpu_tb.DUT.DP.REGFILE.R4 !== 16'd21) begin
         err = 1;
         $display("FAILED: MOV R4, #21");
         $stop;
@@ -98,7 +98,7 @@ module cpu_tb ();
         SIM_s = 0;
         @(posedge SIM_w); // wait for w to go high again
         #10;
-        if (lab6_check.DUT.DP.REGFILE.R5 !== 16'h(-30)) begin
+        if (cpu_tb.DUT.DP.REGFILE.R5 !== -16'd30) begin
         err = 1;
         $display("FAILED: MOV R5, #-30");
         $stop;
@@ -114,7 +114,7 @@ module cpu_tb ();
         SIM_s = 0;
         @(posedge SIM_w); // wait for w to go high again
         #10;
-        if (lab6_check.DUT.DP.REGFILE.R6 !== 16'h0) begin
+        if (cpu_tb.DUT.DP.REGFILE.R6 !== 16'd0) begin
         err = 1;
         $display("FAILED: MOV R6, #0");
         $stop;
@@ -130,7 +130,7 @@ module cpu_tb ();
         SIM_s = 0;
         @(posedge SIM_w); // wait for w to go high again
         #10;
-        if (lab6_check.DUT.DP.REGFILE.R7 !== 16'h100) begin
+        if (cpu_tb.DUT.DP.REGFILE.R7 !== 16'd100) begin
         err = 1;
         $display("FAILED: MOV R7, #100");
         $stop;
@@ -146,7 +146,7 @@ module cpu_tb ();
         SIM_s = 0;
         @(posedge SIM_w); // wait for w to go high again
         #10;
-        if (lab6_check.DUT.DP.REGFILE.R0 !== 16'h10) begin
+        if (cpu_tb.DUT.DP.REGFILE.R0 !== 16'd10) begin
         err = 1;
         $display("FAILED: MOV R0, #10");
         $stop;
@@ -162,7 +162,7 @@ module cpu_tb ();
         SIM_s = 0;
         @(posedge SIM_w); // wait for w to go high again
         #10;
-        if (lab6_check.DUT.DP.REGFILE.R1 !== 16'h20) begin
+        if (cpu_tb.DUT.DP.REGFILE.R1 !== 16'd20) begin
         err = 1;
         $display("FAILED: MOV R1, R0, LSL#1");
         $stop;
@@ -178,23 +178,23 @@ module cpu_tb ();
         SIM_s = 0;
         @(posedge SIM_w); // wait for w to go high again
         #10;
-        if (lab6_check.DUT.DP.REGFILE.R5 !== 16'h4) begin
+        if (cpu_tb.DUT.DP.REGFILE.R5 !== 16'd4) begin
         err = 1;
         $display("FAILED: MOV R5, R3, LSR#1");
         $stop;
         end
 
         //Test 11: ADD R2, R1, R5 (R2 Should Equal 24)
-        in = 16'b1010000101000101;
-        load = 1;
+        SIM_in = 16'b1010000101000101;
+        SIM_load = 1;
         #10;
-        load = 0;
-        s = 1;
+        SIM_load = 0;
+        SIM_s = 1;
         #10
-        s = 0;
-        @(posedge w); // wait for w to go high again
+        SIM_s = 0;
+        @(posedge SIM_w); // wait for w to go high again
         #10;
-        if (lab6_check.DUT.DP.REGFILE.R2 !== 16'h24) begin
+        if (cpu_tb.DUT.DP.REGFILE.R2 !== 16'd24) begin
         err = 1;
         $display("FAILED: ADD R2, R1, R0, LSL#1");
         $stop;

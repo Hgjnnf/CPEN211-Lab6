@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/Users/georg/Documents/CPEN211/Lab5
 vALU
-Z0 !s110 1637548126
+Z0 !s110 1637619898
 !i10b 1
 !s100 eaCAzNjG<AXT4^WH4=Q`m1
 IHF]Xd?giMhjRSK3KEmnam1
@@ -23,7 +23,7 @@ Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1637548126.000000
+Z5 !s108 1637619898.000000
 !s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/alu.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/alu.v|
 !i113 1
@@ -53,7 +53,7 @@ R6
 R7
 n@a@l@u_tb
 vcpu
-R0
+Z8 !s110 1637619899
 !i10b 1
 !s100 dUb9]iMCQ[X[kjh9fET1n3
 IW7LAfaZj`71fNd7<2PFM=2
@@ -67,14 +67,35 @@ R4
 r1
 !s85 0
 31
-R5
+Z9 !s108 1637619899.000000
 !s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/cpu.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/cpu.v|
 !i113 1
 R6
 R7
+vcpu_tb
+R8
+!i10b 1
+!s100 JA4Kh2XiC_3JLckTEWjj=2
+IHQ]HKB8?V8Th=6A>I3KHQ1
+R1
+R2
+w1637619894
+8C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/cpu_tb.v
+FC:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/cpu_tb.v
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/cpu_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/cpu_tb.v|
+!i113 1
+R6
+R7
 vdatapath
-R0
+R8
 !i10b 1
 !s100 knLP5P8fj<dnX?J>D7[[E2
 Ijm[h20JbnA[kgT6m_AH6n3
@@ -88,14 +109,14 @@ R4
 r1
 !s85 0
 31
-R5
+R9
 !s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/datapath.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/datapath.v|
 !i113 1
 R6
 R7
 vdatapath_tb
-R0
+R8
 !i10b 1
 !s100 ]4c]i<0b2A@kJV7gaEZJi2
 IPBIHiY`<j_m7OY9gHhg;71
@@ -109,35 +130,35 @@ R4
 r1
 !s85 0
 31
-R5
+R9
 !s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/datapath_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/datapath_tb.v|
 !i113 1
 R6
 R7
 vinput_iface
-R0
+R8
 !i10b 1
 !s100 cI]j=hC?HTJJ3jIgio0>f3
 I1eo3=aKa7X@YBH3NFgkJL2
 R1
 R2
 R3
-Z8 8C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/lab6_top.v
-Z9 FC:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/lab6_top.v
+Z10 8C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/lab6_top.v
+Z11 FC:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/lab6_top.v
 L0 68
 R4
 r1
 !s85 0
 31
-R5
-Z10 !s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/lab6_top.v|
-Z11 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/lab6_top.v|
+R9
+Z12 !s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/lab6_top.v|
+Z13 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/lab6_top.v|
 !i113 1
 R6
 R7
 vlab6_check
-R0
+R8
 !i10b 1
 !s100 VXhNmK6`caQiXNfmH5?in1
 IT5F@M5Flz[GK`N<001IjB0
@@ -151,35 +172,35 @@ R4
 r1
 !s85 0
 31
-R5
+R9
 !s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/lab6_autograder_check.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/lab6_autograder_check.v|
 !i113 1
 R6
 R7
 vlab6_top
-R0
+R8
 !i10b 1
 !s100 HnMnR^0_7RC1<B7BMA51`0
 IDn_6WCh?5<aJKAR`AE8@23
 R1
 R2
 R3
-R8
-R9
+R10
+R11
 L0 32
 R4
 r1
 !s85 0
 31
-R5
-R10
-R11
+R9
+R12
+R13
 !i113 1
 R6
 R7
 vregfile
-R0
+R8
 !i10b 1
 !s100 oC1?BC?AK77l]fnZH9Sg>0
 IRJb:EYkc9c1B_o2iAKbGf2
@@ -193,14 +214,14 @@ R4
 r1
 !s85 0
 31
-R5
+R9
 !s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/regfile.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/regfile.v|
 !i113 1
 R6
 R7
 vregfile_tb
-R0
+R8
 !i10b 1
 !s100 jg332R9VVggZCj4IM:Q:41
 IT=f3o`4F<L_oj^C>S?05S2
@@ -214,14 +235,14 @@ R4
 r1
 !s85 0
 31
-R5
+R9
 !s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/regfile_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/regfile_tb.v|
 !i113 1
 R6
 R7
 vshifter
-R0
+R8
 !i10b 1
 !s100 [bHAVm>CP8X3W<JF[Z3;B0
 IUC^nn]8nbDGAQ5BNGl7<^1
@@ -235,14 +256,14 @@ R4
 r1
 !s85 0
 31
-R5
+R9
 !s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/shifter.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/shifter.v|
 !i113 1
 R6
 R7
 vshifter_tb
-R0
+R8
 !i10b 1
 !s100 lMh0z6znH[kn6mz98BYnd2
 IaY:g6S5[5g0757MGUQI>m2
@@ -256,51 +277,51 @@ R4
 r1
 !s85 0
 31
-R5
+R9
 !s107 C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/shifter_tb.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/micha/Desktop/CPEN_Labs/lab6/CPEN211-Lab6/shifter_tb.v|
 !i113 1
 R6
 R7
 vsseg
-R0
+R8
 !i10b 1
 !s100 5Xd]OYh;S_529bl`RUGPB0
 IST:85i;]8iH<hI0PNBCa03
 R1
 R2
 R3
-R8
-R9
+R10
+R11
 L0 96
 R4
 r1
 !s85 0
 31
-R5
-R10
-R11
+R9
+R12
+R13
 !i113 1
 R6
 R7
 vvDFF
-R0
+R8
 !i10b 1
 !s100 cYi1U1`Gha]F?>a5zRH6>3
 I0PVM6dCoc>hj4WFbiXaES1
 R1
 R2
 R3
-R8
-R9
+R10
+R11
 L0 79
 R4
 r1
 !s85 0
 31
-R5
-R10
-R11
+R9
+R12
+R13
 !i113 1
 R6
 R7
