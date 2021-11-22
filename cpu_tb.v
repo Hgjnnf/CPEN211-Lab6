@@ -103,7 +103,7 @@ module cpu_tb ();
         $display("FAILED TEST #: MOV R5, #-30");
         $stop;
         end
-        if (cpu_tb.DUT.DP.REGFILE.V !== 1'd1) begin
+        if (cpu_tb.DUT.V !== 1'd1) begin
         err = 1;
         $display("FAILED TEST #5: Overflow NOT Detected");
         $stop;
@@ -248,7 +248,7 @@ module cpu_tb ();
         SIM_s = 0;
         @(posedge SIM_w); // wait for w to go high again
         #10;
-        if (cpu_tb.DUT.DP.REGFILE.Z !== 1'd1) begin
+        if (cpu_tb.DUT.Z !== 1'd1) begin
         err = 1;
         $display("FAILED TEST #14: CMP R0, R1, LSR#1");
         $stop;
@@ -264,7 +264,7 @@ module cpu_tb ();
         SIM_s = 0;
         @(posedge SIM_w); // wait for w to go high again
         #10;
-        if (cpu_tb.DUT.DP.REGFILE.Z !== 1'd1) begin
+        if (cpu_tb.DUT.Z !== 1'd1) begin
         err = 1;
         $display("FAILED TEST #15: CMP R0, R0");
         $stop;
