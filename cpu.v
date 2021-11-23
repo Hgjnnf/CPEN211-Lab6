@@ -82,6 +82,7 @@ module cpu(clk, reset, s, load, in, out, N, V, Z, w);
             endcase
         end
 
+        // output of different states
         case(state)
             SgetA: {nsel, loada, loadb} = {3'b100, 1'b1, 1'b0};
             SgetB: {nsel, loadb, loada} = {3'b001, 1'b1, 1'b0};
@@ -97,7 +98,7 @@ module cpu(clk, reset, s, load, in, out, N, V, Z, w);
         endcase
     end
 
-    // Datapath
+    // Datapath Instantiation
     datapath DP(
         .clk(clk), 
         .readnum(readnum), 
@@ -120,6 +121,7 @@ module cpu(clk, reset, s, load, in, out, N, V, Z, w);
         .datapath_out(out)
     );
 
+    // Assigning V, N, Z from Z_out
     always @(*) begin
         V = Z_out[2];
         N = Z_out[1];
