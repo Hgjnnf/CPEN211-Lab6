@@ -8,6 +8,6 @@ Partner 1 (Michael) Contributions:
 - Made the waveform and identified bugs in cpu.v
 ---------------------------------
 Partner 2 (Gordon) Contributions:
-- Main contributor and debugger for Stage 1 changes in datapath.v and datapath_tb.v changes
+- Main contributor and debugger for Stage 1 changes in datapath.v
 - Main contributor for Stage 2 changes in cpu.v
 ---------------------------------
