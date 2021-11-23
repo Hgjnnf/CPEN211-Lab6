@@ -1,0 +1,13 @@
+---------------------------------
+Lab 6 Contributions
+---------------------------------
+NOTE: The datapath.v and datapath_tb.v files from Lab 5 was borrowed from Bhavrup Gosal and Kerem Oktay
+---------------------------------
+Partner 1 (Michael) Contributions:
+- Main contributor and debugger for cpu_tb.v
+- Made the waveform and identified bugs in cpu.v
+---------------------------------
+Partner 2 (Gordon) Contributions:
+- Main contributor and debugger for Stage 1 changes in datapath.v and datapath_tb.v changes
+- Main contributor for Stage 2 changes in cpu.v
+---------------------------------
