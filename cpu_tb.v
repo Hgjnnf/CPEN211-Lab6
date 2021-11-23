@@ -6,8 +6,10 @@ module cpu_tb ();
 
     reg err;
 
+    //cpu module instantiation
     cpu DUT(SIM_clk, SIM_reset, SIM_s, SIM_load, SIM_in, SIM_out, SIM_N, SIM_V, SIM_Z, SIM_w);
 
+    //clk cycle
     initial begin
         SIM_clk = 0; #5;
         forever begin
@@ -16,6 +18,7 @@ module cpu_tb ();
         end
     end
 
+    //test benches
     initial begin
         //Initializations
         err = 0;
