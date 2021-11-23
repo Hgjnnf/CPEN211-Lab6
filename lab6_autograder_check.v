@@ -48,6 +48,7 @@ module lab6_check;
       $stop;
     end
 
+    @(negedge clk); // wait for falling edge of clock before changing inputs
     in = 16'b1101000100000010;
     load = 1;
     #10;
@@ -63,6 +64,7 @@ module lab6_check;
       $stop;
     end
 
+    @(negedge clk); // wait for falling edge of clock before changing inputs
     in = 16'b1010000101001000;
     load = 1;
     #10;
@@ -74,7 +76,6 @@ module lab6_check;
     #10;
     if (lab6_check.DUT.DP.REGFILE.R2 !== 16'h10) begin
       err = 1;
-      $display("R2 is: %d", lab6_check.DUT.DP.REGFILE.R2);
       $display("FAILED: ADD R2, R1, R0, LSL#1");
       $stop;
     end
