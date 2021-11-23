@@ -353,7 +353,7 @@ module cpu_tb ();
         SIM_s = 0;
         @(posedge SIM_w); // wait for w to go high again
         #10;
-        if (cpu_tb.DUT.DP.REGFILE.R7 !== 16'h1111111111111111) begin
+        if (cpu_tb.DUT.DP.REGFILE.R7 !== 16'b1111111111111111) begin
         err = 1;
         $display("FAILED TEST #19: AND R7, R2, R3");
         $stop;
@@ -370,9 +370,97 @@ module cpu_tb ();
         SIM_s = 0;
         @(posedge SIM_w); // wait for w to go high again
         #10;
-        if (cpu_tb.DUT.DP.REGFILE.R0 !== 16'h0000000000001000) begin
+        if (cpu_tb.DUT.DP.REGFILE.R0 !== 16'b0000000000001000) begin
         err = 1;
         $display("FAILED TEST #20: AND R0, R7, R5, LSL#1");
+        $stop;
+        end
+
+        //Test #21: AND R0, R1, R3, ASR#1
+        @(negedge clk);
+        SIM_in = 16'b1011000100011011;
+        SIM_load = 1;
+        #10;
+        SIM_load = 0;
+        SIM_s = 1;
+        #10
+        SIM_s = 0;
+        @(posedge SIM_w); // wait for w to go high again
+        #10;
+        if (cpu_tb.DUT.DP.REGFILE.R0 !== 16'b00000000000100) begin
+        err = 1;
+        $display("FAILED TEST #21: AND R0, R1, R3, ASR#1");
+        $stop;
+        end
+
+        //Test #22: MVN R4, R4
+        @(negedge clk);
+        SIM_in = 16'b1011100010000101;
+        SIM_load = 1;
+        #10;
+        SIM_load = 0;
+        SIM_s = 1;
+        #10
+        SIM_s = 0;
+        @(posedge SIM_w); // wait for w to go high again
+        #10;
+        if (cpu_tb.DUT.DP.REGFILE.R4 !== -16'b21) begin
+        err = 1;
+        $display("FAILED TEST #22a: MVN R4, R4");
+        $stop;
+        end
+        if (cpu_tb.DUT.N !== 1'd1) begin
+        err = 1;
+        $display("FAILED TEST #22b: MVN R4, R4");
+        $stop;
+        end
+        if (cpu_tb.DUT.V !== 1'd1) begin
+        err = 1;
+        $display("FAILED TEST #22c: MVN R4, R4");
+        $stop;
+        end
+
+        //Test #23: MVN R5, R4, LSL#1
+        @(negedge clk);
+        SIM_in = 16'b1011100010101100;
+        SIM_load = 1;
+        #10;
+        SIM_load = 0;
+        SIM_s = 1;
+        #10
+        SIM_s = 0;
+        @(posedge SIM_w); // wait for w to go high again
+        #10;
+        if (cpu_tb.DUT.DP.REGFILE.R5 !== -16'b42) begin
+        err = 1;
+        $display("FAILED TEST #23a: MVN R5, R4, LSL#1");
+        $stop;
+        end
+        if (cpu_tb.DUT.N !== 1'd1) begin
+        err = 1;
+        $display("FAILED TEST #23a: MVN R5, R4, LSL#1");
+        $stop;
+        end
+        if (cpu_tb.DUT.V !== 1'd1) begin
+        err = 1;
+        $display("FAILED TEST #23a: MVN R5, R4, LSL#1");
+        $stop;
+        end
+
+        //Test #24: MVN R1, R5
+        @(negedge clk);
+        SIM_in = 16'b1011100000100101;
+        SIM_load = 1;
+        #10;
+        SIM_load = 0;
+        SIM_s = 1;
+        #10
+        SIM_s = 0;
+        @(posedge SIM_w); // wait for w to go high again
+        #10;
+        if (cpu_tb.DUT.DP.REGFILE.R1 !== 16'b42) begin
+        err = 1;
+        $display("FAILED TEST #24: MVN R1, R5");
         $stop;
         end
 
