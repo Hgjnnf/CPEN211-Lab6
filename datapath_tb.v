@@ -1,31 +1,35 @@
  module datapath_tb();
   reg sim_clk;
   reg [2:0] sim_readnum, sim_writenum;
-  reg [1:0] sim_ALUop, sim_shift;
-  reg sim_write, sim_vsel, sim_loada, sim_loadb, sim_asel, sim_bsel, sim_loadc, sim_loads;
-  reg [15:0] sim_datapath_in; 
+  reg [1:0] sim_ALUop, sim_shift, sim_vsel;
+  reg sim_write, sim_loada, sim_loadb, sim_asel, sim_bsel, sim_loadc, sim_loads;
+  reg [15:0] sim_sximm5, sim_sximm8;
   reg err;
 
   wire [15:0] sim_datapath_out;
-  wire sim_Z_out;
+  wire [2:0] sim_Z_out;
 
-  datapath DUT(.clk(sim_clk),
-               .readnum(sim_readnum),
-               .vsel(sim_vsel),
-               .loada(sim_loada),
-               .loadb(sim_loadb),
-               .shift(sim_shift),
-               .asel(sim_asel),
-               .bsel(sim_bsel),
-               .ALUop(sim_ALUop),
-               .loadc(sim_loadc),
-               .loads(sim_loads),
-               .writenum(sim_writenum),
-               .write(sim_write),
-               .datapath_in(sim_datapath_in),
-               .Z_out(sim_Z_out),
-               .datapath_out(sim_datapath_out));
-
+    datapath DUT(
+        .clk(sim_clk), 
+        .readnum(sim_readnum), 
+        .vsel(sim_vsel), 
+        .loada(sim_loada), 
+        .loadb(sim_loadb), 
+        .shift(sim_shift),
+        .asel(sim_asel),
+        .bsel(sim_bsel),
+        .ALUop(sim_ALUop),
+        .loadc(sim_loadc),
+        .loads(sim_loads),
+        .writenum(sim_writenum),
+        .write(sim_write),
+        .mdata(16'b0),
+        .PC(8'b0),
+        .sximm5(sim_sximm5),
+        .sximm8(sim_sximm8),
+        .Z_out(sim_Z_out),
+        .datapath_out(sim_datapath_out)
+    );
   initial begin
 
     sim_clk = 1'b0;
@@ -39,9 +43,9 @@
     #5;
     sim_write = 1'b1;
     sim_writenum = 3'b000;
-    sim_vsel = 1'b1;
+    sim_vsel = 2'b10;
     #5;
-    sim_datapath_in = 16'd18;
+    sim_sximm8 = 16'd18;
     #5;
     sim_clk = 1'b1;
     #5;
@@ -50,9 +54,9 @@
     #5;
     sim_write = 1'b1;
     sim_writenum = 3'b001;
-    sim_vsel = 1'b1;
+    sim_vsel = 2'b10;
     #5;
-    sim_datapath_in = 16'd76;
+    sim_sximm8 = 16'd76;
     #5;
     sim_clk = 1'b1;
     #5;
@@ -66,7 +70,7 @@
     sim_readnum = 3'b000;
     sim_loada = 1'b1;
     sim_loadb = 1'b0;
-    #5
+    #5;
     sim_clk = 1'b1;
     #5;
     sim_clk = 1'b0;
@@ -102,7 +106,7 @@
     //cycle 4
     sim_write = 1'b1;
     sim_writenum = 3'b010;
-    sim_vsel = 1'b0;
+    sim_vsel = 2'b00;
     #5;
     sim_clk = 1'b1;
     #5;
@@ -129,9 +133,9 @@
     //should write value 32 to some register 
     sim_write = 1'b1;
     sim_writenum = 3'b011;//R3
-    sim_vsel = 1'b1;
+    sim_vsel = 2'b10;
     #5;
-    sim_datapath_in = 16'd32;
+    sim_sximm8 = 16'd32;
     #5;
     sim_clk = 1'b1;
     #5;
@@ -180,7 +184,7 @@
     //cycle 4
     sim_write = 1'b1;
     sim_writenum = 3'b011;
-    sim_vsel = 1'b0;
+    sim_vsel = 2'b00;
     #5;
     sim_clk = 1'b1;
     #5;
@@ -228,7 +232,7 @@
     //cycle 3
     sim_write = 1'b1;
     sim_writenum = 3'b111;
-    sim_vsel = 1'b0;
+    sim_vsel = 2'b00;
     #5;
     sim_clk = 1'b1;
     #5;
@@ -287,7 +291,7 @@
     //cycle 4
     sim_write = 1'b1;
     sim_writenum = 3'b101;
-    sim_vsel = 1'b0;
+    sim_vsel = 2'b00;
     #5;
     sim_clk = 1'b1;
     #5;
@@ -307,7 +311,7 @@
     //bsel requires lower 5 bits of datapath_in
 
     //cycle 1
-    sim_datapath_in = 16'b1010010011101001;
+    sim_sximm8 = 16'b1010010011101001;
     sim_readnum = 3'b101;
     sim_loada = 1'b0;
     sim_loadb = 1'b1;
@@ -335,7 +339,7 @@
     //cycle 3
     sim_write = 1'b1;
     sim_writenum = 3'b110;
-    sim_vsel = 1'b0;
+    sim_vsel = 2'b00;
     #5;
     sim_clk = 1'b1;
     #5;
