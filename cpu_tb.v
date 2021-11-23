@@ -100,12 +100,17 @@ module cpu_tb ();
         #10;
         if (cpu_tb.DUT.DP.REGFILE.R5 !== -16'd30) begin
         err = 1;
-        $display("FAILED TEST #: MOV R5, #-30");
+        $display("FAILED TEST #5a: MOV R5, #-30");
         $stop;
         end
-        if (cpu_tb.DUT.V !== 1'd1) begin
+        if (cpu_tb.DUT.N !== 1'd0) begin
         err = 1;
-        $display("FAILED TEST #5: Overflow NOT Detected");
+        $display("FAILED TEST #5b: Negative Integer NOT Detected");
+        $stop;
+        end
+        if (cpu_tb.DUT.V !== 1'd0) begin
+        err = 1;
+        $display("FAILED TEST #5c: Overflow NOT Detected");
         $stop;
         end
 
@@ -267,6 +272,84 @@ module cpu_tb ();
         if (cpu_tb.DUT.Z !== 1'd1) begin
         err = 1;
         $display("FAILED TEST #15: CMP R0, R0");
+        $stop;
+        end
+
+        //Test #16: MOV R2, #-10
+        SIM_in = 16'b1101001011110110;
+        SIM_load = 1;
+        #10;
+        SIM_load = 0;
+        SIM_s = 1;
+        #10
+        SIM_s = 0;
+        @(posedge SIM_w); // wait for w to go high again
+        #10;
+        if (cpu_tb.DUT.DP.REGFILE.R2 !== -16'd10) begin
+        err = 1;
+        $display("FAILED TEST #16a: MOV R2, #-31");
+        $stop;
+        end
+        if (cpu_tb.DUT.N !== 1'd0) begin
+        err = 1;
+        $display("FAILED TEST #16b: Negative Integer NOT Detected");
+        $stop;
+        end
+        if (cpu_tb.DUT.V !== 1'd0) begin
+        err = 1;
+        $display("FAILED TEST #16c: Overflow NOT Detected");
+        $stop;
+        end
+
+        //Test #17: MOV R3, #-10
+        SIM_in = 16'b1101001111110110;
+        SIM_load = 1;
+        #10;
+        SIM_load = 0;
+        SIM_s = 1;
+        #10
+        SIM_s = 0;
+        @(posedge SIM_w); // wait for w to go high again
+        #10;
+        if (cpu_tb.DUT.DP.REGFILE.R3 !== -16'd10) begin
+        err = 1;
+        $display("FAILED TEST #17a: MOV R2, #-31");
+        $stop;
+        end
+        if (cpu_tb.DUT.N !== 1'd0) begin
+        err = 1;
+        $display("FAILED TEST #17b: Negative Integer NOT Detected");
+        $stop;
+        end
+        if (cpu_tb.DUT.V !== 1'd0) begin
+        err = 1;
+        $display("FAILED TEST #17c: Overflow NOT Detected");
+        $stop;
+        end
+
+        //Test 18: CMP R2, R3
+        SIM_in = 16'b1010101000000011;
+        SIM_load = 1;
+        #10;
+        SIM_load = 0;
+        SIM_s = 1;
+        #10
+        SIM_s = 0;
+        @(posedge SIM_w); // wait for w to go high again
+        #10;
+        if (cpu_tb.DUT.Z !== 1'd1) begin
+        err = 1;
+        $display("FAILED TEST #18a: CMP R2, R3");
+        $stop;
+        end
+        if (cpu_tb.DUT.N !== 1'd0) begin
+        err = 1;
+        $display("FAILED TEST #18b: CMP R2, R3");
+        $stop;
+        end
+        if (cpu_tb.DUT.V !== 1'd0) begin
+        err = 1;
+        $display("FAILED TEST #18c: CMP R2, R3");
         $stop;
         end
 
